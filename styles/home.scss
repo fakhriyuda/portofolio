@@ -1,0 +1,160 @@
+.base-container {
+  background-color: white;
+  height: 100vh;
+  overflow: auto; /* Ensure scrolling if content overflows */
+
+  h1,
+  h2,
+  h3,
+  span,
+  p {
+    color: black;
+  }
+  .headers {
+    padding: 20px 0px;
+    position: relative;
+    height: 50px;
+    align-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+    .left {
+      height: 50px;
+      display: flex;
+      align-items: center;
+      position: absolute;
+    }
+    .right {
+      display: flex;
+      height: 50px;
+      right: 0px;
+      position: absolute;
+      align-items: center;
+    }
+    .btn-header {
+      margin: 4px;
+      padding: 8px 16px;
+      border-radius: 5px; /* Optional rounded corners */
+      transition: background-color 0.3s ease; /* Smooth color transition */
+      background-color: rgba(0, 0, 0, 0); /* New background color on hover */
+    }
+    .btn-header:hover {
+      background-color: rgba(0, 0, 0, 0.05); /* New background color on hover */
+    }
+
+    p {
+      color: black;
+      font-size: 16px;
+      font-weight: 600;
+    }
+  }
+  .texts {
+    overflow: hidden; /* Hide text outside the container */
+    white-space: nowrap; /* Prevent text wrapping */
+    padding: 60px 0px;
+  }
+
+  .texts-slide {
+    display: inline-block;
+    animation: scroll-text 8s infinite linear; /* Animation speed */
+  }
+
+  .texts-slide span {
+    display: inline-block;
+    font-size: 244px; /* Adjust font size */
+    font-family: sans-serif;
+    line-height: 1;
+    color: #000; /* Text color */
+  }
+
+  @keyframes scroll-text {
+    0% {
+      transform: translateX(
+        0%
+      ); /* Start the text from the right (off-screen) */
+    }
+    100% {
+      transform: translateX(
+        -100%
+      ); /* Move the text completely to the left (off-screen) */
+    }
+  }
+
+  .content {
+    background-color: white;
+    position: relative;
+    margin: 0px 10%;
+    min-height: 100px; /* Ensures the element has height */
+
+    .freelance {
+      position: absolute;
+      left: 20px;
+      top: 10px;
+      align-items: center;
+
+      span {
+        display: block;
+        font-size: 24px;
+        font-weight: 600;
+      }
+    }
+    .center-user {
+      position: absolute;
+      left: 25%;
+      width: 50%;
+      height: 300px;
+    }
+
+    .socmed-wrap {
+      position: absolute;
+      right: 20px;
+      top: 10px;
+      align-items: center;
+
+      .ic {
+        margin-bottom: 10px;
+        display: block;
+        align-items: center;
+        text-align: center;
+        align-content: center;
+        position: relative; /* Necessary for pseudo-elements */
+        overflow: hidden; /* Hide the expanding effect */
+        background-color: rgba(0, 0, 0, 0);
+        border-radius: 100%;
+        border-width: 1px;
+        border-color: rgba(0, 0, 0, 0.2);
+        width: 50px;
+        height: 50px;
+        color: black;
+        z-index: 0; /* Ensure text is above the pseudo-element */
+        transition: color 0.3s ease; /* Smooth text color transition */
+      }
+
+      .ic:hover {
+        color: white; /* Change text color on hover */
+      }
+
+      .ic::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background-color: rgba(0, 0, 0, 1); /* Hover background color */
+        border-radius: 50%; /* Make it circular */
+        transform: translate(-50%, -50%);
+        z-index: -1; /* Place behind the text */
+        transition: width 0.5s ease-in-out, height 0.5s ease-in-out; /* Smooth size transition */
+      }
+
+      .ic:hover::before {
+        width: 200%; /* Expand to cover the button */
+        height: 200%;
+      }
+    }
+  }
+
+  .align-center {
+    align-items: center;
+  }
+}
