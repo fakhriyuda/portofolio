@@ -3,6 +3,7 @@ import Image from "next/image";
 import { BottomRight, EmptyWishlist, People } from "@/public/images";
 import "../styles/home.scss";
 import lottie from "lottie-web";
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import dotGreen from "../public/images/dot_green.json";
 
@@ -24,17 +25,20 @@ export default function Home() {
   return (
     <div className="base-container">
       <div className="headers">
-        <a href="" className="left btn-header">
-          <Image src={EmptyWishlist} alt="logo" width={30} height={30} />
-          <p style={{ marginLeft: 8 }}>yuda.</p>
-        </a>
+        <div className="left">
+          <a href="" className="btn-header">
+            {/* <Image src={EmptyWishlist} alt="logo" width={30} height={30} /> */}
+            <p style={{ marginLeft: 8 }}>yuda.</p>
+          </a>
+        </div>
+
         <div className="right">
-          <a href="" className="btn-header">
-            <p>Home</p>
-          </a>
-          <a href="" className="btn-header">
+          <Link href="/login" className="btn-header">
+            <p>Login</p>
+          </Link>
+          <Link href="/work" className="btn-header">
             <p>Work</p>
-          </a>
+          </Link>
           <a href="" className="btn-header">
             <p>Contact</p>
           </a>

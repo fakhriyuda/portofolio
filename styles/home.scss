@@ -11,13 +11,13 @@
     color: black;
   }
   .headers {
-    padding: 20px 0px;
     position: relative;
     height: 50px;
     align-items: center;
     margin-left: 10%;
     margin-right: 10%;
     .left {
+      left: 0;
       height: 50px;
       display: flex;
       align-items: center;
@@ -65,6 +65,25 @@
     line-height: 1;
     color: #000; /* Text color */
   }
+
+  @media screen and (max-width: 1200px) {
+    .texts-slide span {
+      font-size: 244px; /* Adjust font size */
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .texts-slide span {
+      font-size: 180px; /* Adjust font size */
+    }
+  }
+  @media screen and (max-width: 500px){
+    .texts-slide span {
+      font-size: 120px; /* Adjust font size */
+    }
+  }
+
+ 
+  
 
   @keyframes scroll-text {
     0% {

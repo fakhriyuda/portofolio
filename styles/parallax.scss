@@ -1,0 +1,65 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+  }
+  
+  /* Fixed background container */
+  .fixed-background {
+    position: relative;
+    height: 100vh; /* Full screen height */
+    background: url('https://via.placeholder.com/1200x800') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed; /* Fixed background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    z-index: 1;
+  }
+  
+  /* Content that stays fixed in the center */
+  .fixed-background .content {
+    position: absolute; /* Fix content to the center */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Ensure content is above the background */
+    text-align: center;
+  }
+  
+  .fixed-background .content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .fixed-background .content p {
+    font-size: 1.5rem;
+  }
+  
+  /* Scrollable content below the fixed background */
+  .scrollable-content {
+    background-color: #f4f4f4;
+    padding: 2rem;
+    color: #333;
+    text-align: center;
+  }
+  
+  .scrollable-content h2 {
+    margin-top: 30px;
+    font-size: 2rem;
+  }
+  
+  .scrollable-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
